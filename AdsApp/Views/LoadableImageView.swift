@@ -38,14 +38,14 @@ final class LoadableImageView: UIImageView {
         
         imageUrlString = urlString
         
-        image = nil
-                
+        image = UIImage(named: "placeholder")
+
         // Load already cached image if so
         if let cachedImage = ImageCache.shared.getImage(forKey: urlString) {
             image = cachedImage
             return
         }
-        
+                
         if let url = URL(string: urlString) {
             activity.startAnimating()
 
@@ -69,7 +69,6 @@ final class LoadableImageView: UIImageView {
                         }
                     }
                 }
-                
             }
             currentTask = dataTask
             dataTask.resume()

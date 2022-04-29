@@ -21,7 +21,7 @@
 		479F290C2819855F009DCE91 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F290B2819855F009DCE91 /* ErrorHelper.swift */; };
 		479F290F28198581009DCE91 /* LoadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F290E28198581009DCE91 /* LoadableImageView.swift */; };
 		479F2912281985A7009DCE91 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2911281985A7009DCE91 /* BaseViewController.swift */; };
-		479F2914281985B5009DCE91 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2913281985B5009DCE91 /* UIView.swift */; };
+		479F2914281985B5009DCE91 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2913281985B5009DCE91 /* UIView+Extension.swift */; };
 		479F29182819862C009DCE91 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F29172819862C009DCE91 /* API.swift */; };
 		479F291A2819863E009DCE91 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F29192819863E009DCE91 /* APIRequest.swift */; };
 		479F291C28198650009DCE91 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F291B28198650009DCE91 /* AppAPI.swift */; };
@@ -31,6 +31,11 @@
 		479F2927281988F6009DCE91 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479F2926281988F6009DCE91 /* HomeViewController.xib */; };
 		479F292928198902009DCE91 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F292828198902009DCE91 /* HomeViewModel.swift */; };
 		479F292B2819890B009DCE91 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F292A2819890B009DCE91 /* HomeCoordinator.swift */; };
+		479F292E281AD3F5009DCE91 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F292D281AD3F5009DCE91 /* AdCell.swift */; };
+		479F2930281AD3FF009DCE91 /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479F292F281AD3FF009DCE91 /* AdCell.xib */; };
+		479F2932281AF267009DCE91 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2931281AF267009DCE91 /* Double+Extension.swift */; };
+		479F2935281B01A6009DCE91 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2934281B01A6009DCE91 /* Storage.swift */; };
+		479F2937281B01C5009DCE91 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2936281B01C5009DCE91 /* Storable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +74,7 @@
 		479F290B2819855F009DCE91 /* ErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
 		479F290E28198581009DCE91 /* LoadableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImageView.swift; sourceTree = "<group>"; };
 		479F2911281985A7009DCE91 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		479F2913281985B5009DCE91 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		479F2913281985B5009DCE91 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		479F29172819862C009DCE91 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		479F29192819863E009DCE91 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		479F291B28198650009DCE91 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
@@ -79,6 +84,11 @@
 		479F2926281988F6009DCE91 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		479F292828198902009DCE91 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		479F292A2819890B009DCE91 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		479F292D281AD3F5009DCE91 /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		479F292F281AD3FF009DCE91 /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
+		479F2931281AF267009DCE91 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		479F2934281B01A6009DCE91 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		479F2936281B01C5009DCE91 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,7 @@
 		479F28CD28198326009DCE91 /* AdsApp */ = {
 			isa = PBXGroup;
 			children = (
+				479F2933281B0198009DCE91 /* Storage */,
 				479F2922281988D8009DCE91 /* Modules */,
 				479F291D281986DA009DCE91 /* Models */,
 				479F2915281985C1009DCE91 /* API */,
@@ -201,7 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				479F2911281985A7009DCE91 /* BaseViewController.swift */,
-				479F2913281985B5009DCE91 /* UIView.swift */,
+				479F2913281985B5009DCE91 /* UIView+Extension.swift */,
+				479F2931281AF267009DCE91 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,12 +256,31 @@
 		479F2923281988DE009DCE91 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				479F292C281AD3E6009DCE91 /* Views */,
 				479F2924281988EF009DCE91 /* HomeViewController.swift */,
 				479F2926281988F6009DCE91 /* HomeViewController.xib */,
 				479F292828198902009DCE91 /* HomeViewModel.swift */,
 				479F292A2819890B009DCE91 /* HomeCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		479F292C281AD3E6009DCE91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				479F292D281AD3F5009DCE91 /* AdCell.swift */,
+				479F292F281AD3FF009DCE91 /* AdCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		479F2933281B0198009DCE91 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				479F2934281B01A6009DCE91 /* Storage.swift */,
+				479F2936281B01C5009DCE91 /* Storable.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479F2930281AD3FF009DCE91 /* AdCell.xib in Resources */,
 				479F28DB28198329009DCE91 /* LaunchScreen.storyboard in Resources */,
 				479F28D828198329009DCE91 /* Assets.xcassets in Resources */,
 				479F2927281988F6009DCE91 /* HomeViewController.xib in Resources */,
@@ -385,12 +417,16 @@
 			files = (
 				479F292928198902009DCE91 /* HomeViewModel.swift in Sources */,
 				479F29182819862C009DCE91 /* API.swift in Sources */,
-				479F2914281985B5009DCE91 /* UIView.swift in Sources */,
+				479F2914281985B5009DCE91 /* UIView+Extension.swift in Sources */,
+				479F2937281B01C5009DCE91 /* Storable.swift in Sources */,
+				479F292E281AD3F5009DCE91 /* AdCell.swift in Sources */,
 				479F291F281986E3009DCE91 /* Ad.swift in Sources */,
 				479F290A28198556009DCE91 /* ImageCache.swift in Sources */,
 				479F291C28198650009DCE91 /* AppAPI.swift in Sources */,
 				479F290828198545009DCE91 /* Bindable.swift in Sources */,
+				479F2935281B01A6009DCE91 /* Storage.swift in Sources */,
 				479F290528198512009DCE91 /* Coordinator.swift in Sources */,
+				479F2932281AF267009DCE91 /* Double+Extension.swift in Sources */,
 				479F290128198503009DCE91 /* AppCoordinator.swift in Sources */,
 				479F292128198817009DCE91 /* AdsRequest.swift in Sources */,
 				479F290F28198581009DCE91 /* LoadableImageView.swift in Sources */,
@@ -579,7 +615,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +644,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

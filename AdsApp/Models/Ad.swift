@@ -11,22 +11,40 @@ struct AdsResponse: Decodable {
     let items: [Ad]
 }
 
-struct Ad: Decodable {
+protocol Identifiable {
+    var id: String { get }
+}
+
+struct Ad: Codable, Identifiable, Equatable {
+    static func == (lhs: Ad, rhs: Ad) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: String
     let title: String?
     let location: String?
     let image: Image?
     let price: Price?
+    var isFavourite: Bool = false
     
     private enum CodingKeys : String, CodingKey {
         case id, title = "description", location, image, price
     }
 }
 
-struct Price: Decodable {
-    let value: Int?
+struct Price: Codable {
+    let value: Double?
+    
+    var formattedValue: String? {
+        return value?.convertToCurrency()
+    }
 }
 
-struct Image: Decodable {
+struct Image: Codable {
     let url: String?
+    
+    var fullParh: String? {
+        guard let url = url else { return nil}
+        return "https://images.finncdn.no/dynamic/480x360c/\(url)"
+    }
 }
