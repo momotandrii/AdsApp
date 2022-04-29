@@ -29,7 +29,7 @@ final class HomeViewController: BaseViewController {
 
         customSwitch.addTarget(self, action: #selector(switchTarget(sender:)), for: .valueChanged)
         let label = UILabel()
-        label.text = "Favourites"
+        label.text = "❤️"
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: customSwitch),
                                                    UIBarButtonItem(customView: label)]
     }
@@ -77,18 +77,11 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let count = viewModel?.ads.value?.count, count > indexPath.row else { return }
-        
-//        viewModel?.getAlbumInfo(for: albumID)
-    }
-}
-
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // Results depends on Favourite switch value
         let numberOfItems = viewModel?.ads.value?.count ?? 0
         let numberOfFilteredItems = viewModel?.storedAds.value?.count ?? 0
         return viewModel?.isFavourites == true ? numberOfFilteredItems : numberOfItems
@@ -98,6 +91,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let reuseId = String(describing: AdCell.self)
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as? AdCell else { return UICollectionViewCell() }
         
+        // Results depends on Favourite switch value
         if viewModel?.isFavourites == true {
             guard var ad = viewModel?.storedAds.value?[indexPath.row] else { return cell }
             ad.isFavourite = true

@@ -46,7 +46,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     func toggleFavourite(for selectedAd: Ad?) {
-        guard var selectedAd = selectedAd, var ads = ads.value else { return }
+        guard var selectedAd = selectedAd, let ads = ads.value else { return }
         
         selectedAd.isFavourite.toggle()
         
@@ -60,7 +60,6 @@ final class HomeViewModel: HomeViewModelProtocol {
 
         ads.enumerated().forEach { index, ad in
             if ad == selectedAd {
-                ads[index].isFavourite.toggle()
                 reloadDataWithIndex.value = index
             }
         }

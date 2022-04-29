@@ -28,24 +28,21 @@ final class AdCell: UICollectionViewCell {
     
     func configure(with ad: Ad?) {
         self.ad = ad
-        toggleFavourite()
-
-        titleLabel.text = ad?.title
-        locationLabel.text = ad?.location
         
-        if let price = ad?.price?.formattedValue {
-            priceLabel.text = price
+        titleLabel.text = ad?.title ?? ""
+        locationLabel.text = ad?.location ?? ""
+        
+        let price = ad?.price?.formattedValue
+            priceLabel.text = price ?? ""
+        
+        if let imageUrl = ad?.image?.fullParh {
+            adImageView.loadImageWithUrl(urlString: imageUrl)
         }
         
-        guard let imageUrl = ad?.image?.fullParh else { return }
-        adImageView.loadImageWithUrl(urlString: imageUrl)
-    }
-    
-    private func toggleFavourite() {
         let image = ad?.isFavourite == true ? UIImage(named: "unlike") : UIImage(named: "like")
         favouriteButton.setImage(image, for: .normal)
     }
-    
+        
     @IBAction func favouriteButtonAction(_ sender: Any) {
         favouriteAction?(ad)
     }
