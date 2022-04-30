@@ -86,11 +86,13 @@ final class HomeViewController: BaseViewController {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let count = viewModel?.ads.value?.count,
+        // Depends on Favourite switch value
+        let ads = viewModel?.isFavourites == true ? viewModel?.storedAds.value : viewModel?.ads.value
+        
+        guard let count = ads?.count,
               count > indexPath.row,
-              var ad = viewModel?.ads.value?[indexPath.row] else {
-                  return
-              }
+              var ad = ads?[indexPath.row]
+        else { return }
         
         if let stored = viewModel?.storedAds.value, stored.contains(ad) {
             ad.isFavourite = true
