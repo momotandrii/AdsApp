@@ -15,7 +15,8 @@ protocol Identifiable {
     var id: String { get }
 }
 
-struct Ad: Codable, Identifiable, Equatable {
+// Ad is a class because we need to update isFavourite from local database separate
+class Ad: Codable, Identifiable, Equatable {
     static func == (lhs: Ad, rhs: Ad) -> Bool {
         return lhs.id == rhs.id
     }
