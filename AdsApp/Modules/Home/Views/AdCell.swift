@@ -33,7 +33,7 @@ final class AdCell: UICollectionViewCell {
         locationLabel.text = ad?.location ?? ""
         
         let price = ad?.price?.formattedValue
-            priceLabel.text = price ?? ""
+        priceLabel.text = price ?? ""
         
         if let imageUrl = ad?.image?.fullParh {
             adImageView.loadImageWithUrl(urlString: imageUrl)
@@ -42,7 +42,7 @@ final class AdCell: UICollectionViewCell {
         let image = ad?.isFavourite == true ? UIImage(named: "unlike") : UIImage(named: "like")
         favouriteButton.setImage(image, for: .normal)
     }
-        
+    
     @IBAction func favouriteButtonAction(_ sender: Any) {
         favouriteAction?(ad)
     }

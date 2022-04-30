@@ -12,6 +12,7 @@ final class HomeCoordinator: BaseCoordinator {
     private let api: API
     private let storage: Storable
     private var homeViewController: HomeViewController?
+    private var detailsCoordinator: DetailsCoordinator?
     
     init(presenter: UINavigationController, api: API, storage: Storable) {
         self.presenter = presenter
@@ -24,9 +25,22 @@ final class HomeCoordinator: BaseCoordinator {
         let homeViewController = instantiate(HomeViewController.self)
         homeViewController.viewModel = viewModel
         homeViewController.title = "Ads"
+        homeViewController.onShowDetails = {[weak self] ad in
+            self?.showDetails(with: ad)
+        }
         
         presenter.pushViewController(homeViewController, animated: true)
         
         self.homeViewController = homeViewController
+    }
+}
+
+extension HomeCoordinator {
+    
+    func showDetails(with ad: Ad) {
+        let detailsCoordinator = DetailsCoordinator(presenter: presenter, storage: storage, ad: ad)
+        detailsCoordinator.start()
+        
+        self.detailsCoordinator = detailsCoordinator
     }
 }

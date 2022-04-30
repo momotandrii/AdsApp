@@ -36,6 +36,10 @@
 		479F2932281AF267009DCE91 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2931281AF267009DCE91 /* Double+Extension.swift */; };
 		479F2935281B01A6009DCE91 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2934281B01A6009DCE91 /* Storage.swift */; };
 		479F2937281B01C5009DCE91 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2936281B01C5009DCE91 /* Storable.swift */; };
+		479F293B281D3DBF009DCE91 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F293A281D3DBF009DCE91 /* DetailsViewController.swift */; };
+		479F293D281D3DCA009DCE91 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479F293C281D3DCA009DCE91 /* DetailsViewController.xib */; };
+		479F293F281D3DD6009DCE91 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F293E281D3DD6009DCE91 /* DetailsViewModel.swift */; };
+		479F2941281D3DE0009DCE91 /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F2940281D3DE0009DCE91 /* DetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		479F2931281AF267009DCE91 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		479F2934281B01A6009DCE91 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		479F2936281B01C5009DCE91 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		479F293A281D3DBF009DCE91 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		479F293C281D3DCA009DCE91 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		479F293E281D3DD6009DCE91 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		479F2940281D3DE0009DCE91 /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +256,7 @@
 		479F2922281988D8009DCE91 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				479F2939281D3DA0009DCE91 /* Details */,
 				479F2923281988DE009DCE91 /* Home */,
 			);
 			path = Modules;
@@ -281,6 +290,17 @@
 				479F2936281B01C5009DCE91 /* Storable.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		479F2939281D3DA0009DCE91 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				479F293A281D3DBF009DCE91 /* DetailsViewController.swift */,
+				479F293C281D3DCA009DCE91 /* DetailsViewController.xib */,
+				479F293E281D3DD6009DCE91 /* DetailsViewModel.swift */,
+				479F2940281D3DE0009DCE91 /* DetailsCoordinator.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +409,7 @@
 			files = (
 				479F2930281AD3FF009DCE91 /* AdCell.xib in Resources */,
 				479F28DB28198329009DCE91 /* LaunchScreen.storyboard in Resources */,
+				479F293D281D3DCA009DCE91 /* DetailsViewController.xib in Resources */,
 				479F28D828198329009DCE91 /* Assets.xcassets in Resources */,
 				479F2927281988F6009DCE91 /* HomeViewController.xib in Resources */,
 			);
@@ -416,8 +437,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				479F292928198902009DCE91 /* HomeViewModel.swift in Sources */,
+				479F293B281D3DBF009DCE91 /* DetailsViewController.swift in Sources */,
 				479F29182819862C009DCE91 /* API.swift in Sources */,
 				479F2914281985B5009DCE91 /* UIView+Extension.swift in Sources */,
+				479F2941281D3DE0009DCE91 /* DetailsCoordinator.swift in Sources */,
 				479F2937281B01C5009DCE91 /* Storable.swift in Sources */,
 				479F292E281AD3F5009DCE91 /* AdCell.swift in Sources */,
 				479F291F281986E3009DCE91 /* Ad.swift in Sources */,
@@ -425,6 +448,7 @@
 				479F291C28198650009DCE91 /* AppAPI.swift in Sources */,
 				479F290828198545009DCE91 /* Bindable.swift in Sources */,
 				479F2935281B01A6009DCE91 /* Storage.swift in Sources */,
+				479F293F281D3DD6009DCE91 /* DetailsViewModel.swift in Sources */,
 				479F290528198512009DCE91 /* Coordinator.swift in Sources */,
 				479F2932281AF267009DCE91 /* Double+Extension.swift in Sources */,
 				479F290128198503009DCE91 /* AppCoordinator.swift in Sources */,

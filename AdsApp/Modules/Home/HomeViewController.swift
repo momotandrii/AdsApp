@@ -12,13 +12,19 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     var viewModel: HomeViewModelProtocol?
     private let numberOfColunmns: CGFloat = 1
-    
+    var onShowDetails: ((Ad) -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavigation()
         configureCollectionView()
         binding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         fetchAds()
     }
     
@@ -74,6 +80,23 @@ final class HomeViewController: BaseViewController {
                 self?.collectionView.reloadItems(at: [indexPath])
             }
         }
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let count = viewModel?.ads.value?.count,
+              count > indexPath.row,
+              var ad = viewModel?.ads.value?[indexPath.row] else {
+                  return
+              }
+        
+        if let stored = viewModel?.storedAds.value, stored.contains(ad) {
+            ad.isFavourite = true
+        }
+        
+        onShowDetails?(ad)
     }
 }
 
