@@ -147,16 +147,16 @@
 		479F28CD28198326009DCE91 /* AdsApp */ = {
 			isa = PBXGroup;
 			children = (
-				479F2933281B0198009DCE91 /* Storage */,
-				479F2922281988D8009DCE91 /* Modules */,
-				479F291D281986DA009DCE91 /* Models */,
+				479F28CE28198326009DCE91 /* AppDelegate.swift */,
 				479F2915281985C1009DCE91 /* API */,
 				479F291028198597009DCE91 /* Extensions */,
-				479F290D28198573009DCE91 /* Views */,
 				479F290628198539009DCE91 /* Helpers */,
+				479F291D281986DA009DCE91 /* Models */,
+				479F2922281988D8009DCE91 /* Modules */,
 				479F28FF281984F3009DCE91 /* Navigation */,
 				479F28FE281984D8009DCE91 /* Resources */,
-				479F28CE28198326009DCE91 /* AppDelegate.swift */,
+				479F2933281B0198009DCE91 /* Storage */,
+				479F290D28198573009DCE91 /* Views */,
 				479F28DC28198329009DCE91 /* Info.plist */,
 			);
 			path = AdsApp;
@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				479F290728198545009DCE91 /* Bindable.swift */,
-				479F290928198556009DCE91 /* ImageCache.swift */,
 				479F290B2819855F009DCE91 /* ErrorHelper.swift */,
+				479F290928198556009DCE91 /* ImageCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				479F2911281985A7009DCE91 /* BaseViewController.swift */,
-				479F2913281985B5009DCE91 /* UIView+Extension.swift */,
 				479F2931281AF267009DCE91 /* Double+Extension.swift */,
+				479F2913281985B5009DCE91 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,11 +265,11 @@
 		479F2923281988DE009DCE91 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				479F292C281AD3E6009DCE91 /* Views */,
+				479F292A2819890B009DCE91 /* HomeCoordinator.swift */,
 				479F2924281988EF009DCE91 /* HomeViewController.swift */,
 				479F2926281988F6009DCE91 /* HomeViewController.xib */,
 				479F292828198902009DCE91 /* HomeViewModel.swift */,
-				479F292A2819890B009DCE91 /* HomeCoordinator.swift */,
+				479F292C281AD3E6009DCE91 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,10 +295,10 @@
 		479F2939281D3DA0009DCE91 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				479F2940281D3DE0009DCE91 /* DetailsCoordinator.swift */,
 				479F293A281D3DBF009DCE91 /* DetailsViewController.swift */,
 				479F293C281D3DCA009DCE91 /* DetailsViewController.xib */,
 				479F293E281D3DD6009DCE91 /* DetailsViewModel.swift */,
-				479F2940281D3DE0009DCE91 /* DetailsCoordinator.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
