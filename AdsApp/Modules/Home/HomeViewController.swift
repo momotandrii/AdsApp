@@ -26,15 +26,15 @@ final class HomeViewController: BaseViewController {
         let customSwitch = UISwitch()
         customSwitch.isOn = false
         customSwitch.setOn(false, animated: true)
-
+        
         customSwitch.addTarget(self, action: #selector(switchTarget(sender:)), for: .valueChanged)
         let label = UILabel()
         label.text = "❤️"
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: customSwitch),
                                                    UIBarButtonItem(customView: label)]
     }
-
-
+    
+    
     @objc func switchTarget(sender: UISwitch) {
         viewModel?.isFavourites = sender.isOn
         collectionView.reloadData()
@@ -69,7 +69,7 @@ final class HomeViewController: BaseViewController {
         
         viewModel?.reloadDataWithIndex.bind {[weak self] index in
             guard let index = index else { return }
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
                 let indexPath = IndexPath(row: index, section: 0)
                 self?.collectionView.reloadItems(at: [indexPath])
             }
@@ -115,17 +115,17 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout to render desired numberOfColunmns
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-      guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
-           return CGSize()
-       }
-
-       // subtract section left/ right insets mentioned in xib view
-       let widthAvailbleForAllItems =  (collectionView.frame.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right)
-
-       // Calculating widthForOneItem for desired numberOfColunmns by sunbtracting item spacing if any
-       let widthForOneItem = widthAvailbleForAllItems / numberOfColunmns - flowLayout.minimumInteritemSpacing
-
-       return CGSize(width: CGFloat(widthForOneItem), height: (flowLayout.itemSize.height))
+        
+        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return CGSize()
+        }
+        
+        // subtract section left/ right insets mentioned in xib view
+        let widthAvailbleForAllItems =  (collectionView.frame.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right)
+        
+        // Calculating widthForOneItem for desired numberOfColunmns by sunbtracting item spacing if any
+        let widthForOneItem = widthAvailbleForAllItems / numberOfColunmns - flowLayout.minimumInteritemSpacing
+        
+        return CGSize(width: CGFloat(widthForOneItem), height: (flowLayout.itemSize.height))
     }
 }
