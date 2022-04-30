@@ -75,8 +75,14 @@ final class HomeViewController: BaseViewController {
         
         viewModel?.reloadDataWithIndex.bind {[weak self] index in
             guard let index = index else { return }
+                        
             DispatchQueue.main.async {
                 let indexPath = IndexPath(row: index, section: 0)
+                // Workaround to prevent 'Invalid cell update' collectionView warning
+                if self?.viewModel?.isFavourites == true {
+                    self?.collectionView.deleteItems(at: [indexPath])
+                    return
+                }
                 self?.collectionView.reloadItems(at: [indexPath])
             }
         }
@@ -86,17 +92,12 @@ final class HomeViewController: BaseViewController {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Depends on Favourite switch value
-        let ads = viewModel?.isFavourites == true ? viewModel?.storedAds.value : viewModel?.ads.value
+        let ads = viewModel?.adsToShow
         
         guard let count = ads?.count,
               count > indexPath.row,
-              var ad = ads?[indexPath.row]
+              let ad = ads?[indexPath.row]
         else { return }
-        
-        if let stored = viewModel?.storedAds.value, stored.contains(ad) {
-            ad.isFavourite = true
-        }
         
         onShowDetails?(ad)
     }
@@ -106,28 +107,15 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // Depends on Favourite switch value
-        let numberOfItems = viewModel?.ads.value?.count ?? 0
-        let numberOfFilteredItems = viewModel?.storedAds.value?.count ?? 0
-        return viewModel?.isFavourites == true ? numberOfFilteredItems : numberOfItems
+        return viewModel?.adsToShow?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let reuseId = String(describing: AdCell.self)
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as? AdCell else { return UICollectionViewCell() }
         
-        // Depends on Favourite switch value
-        if viewModel?.isFavourites == true {
-            guard var ad = viewModel?.storedAds.value?[indexPath.row] else { return cell }
-            ad.isFavourite = true
-            cell.configure(with: ad)
-        } else {
-            guard var ad = viewModel?.ads.value?[indexPath.row] else { return cell }
-            if let stored = viewModel?.storedAds.value, stored.contains(ad) {
-                ad.isFavourite = true
-            }
-            cell.configure(with: ad)
-        }
+        guard let ad = viewModel?.adsToShow?[indexPath.row] else { return cell }
+        cell.configure(with: ad)
         
         cell.favouriteAction = {[weak self] ad in
             self?.viewModel?.toggleFavourite(for: ad)
